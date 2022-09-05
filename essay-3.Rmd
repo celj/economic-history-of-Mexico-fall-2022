@@ -1,0 +1,29 @@
+---
+title: Título
+subtitle: Subtítulo
+classoption: ba
+author:
+  - firstname: Carlos
+    lastname: Lezama
+    email: clezamaj@itam.mx
+    affiliationref: addr1
+affiliations:
+  - ref: addr1
+    name: Historia Económica de México (ECO 17100), ITAM
+date: '`r Sys.Date()`'
+bibliography: references.bib
+output: 
+  bookdown::pdf_book: 
+    base_format: rticles::isba_article
+    md_extensions: -autolink_bare_uris
+---
+
+# Subtítulo
+
+Texto.
+
+## Subsubtítulo
+
+Texto.
+
+# References {#references .unnumbered}

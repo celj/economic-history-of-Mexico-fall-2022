@@ -1,0 +1,90 @@
+% based on https://vtex-soft.github.io/texsupport.isba-ba/
+% \documentclass[ba,preprint]{imsart}% use this for supplement article
+\documentclass[ba]{imsart}
+
+\pubyear{\the\year{}}
+\volume{TBA}
+\issue{TBA}
+
+
+\firstpage{1}
+\lastpage{1}
+
+%
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage[colorlinks,citecolor=blue,urlcolor=blue,filecolor=blue,backref=page]{hyperref}
+\usepackage{graphicx}
+
+\startlocaldefs
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\endlocaldefs
+% rticles required
+
+% tightlist command for lists without linebreak
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% From pandoc table feature
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+
+
+% Pandoc header
+
+\begin{document}
+\begin{frontmatter}
+
+\title{Título}
+\runtitle{Título}
+
+\begin{aug}
+\author{Carlos Lezama\thanksref{addr1}\ead[label=ea-1,email]{clezamaj@itam.mx}}
+\runauthor{Lezama}
+
+ %loop through affiliations
+\address[addr1]{Historia Económica de México (ECO 17100), ITAM,  \ifstrequal{addr1}{addr1}{\printead{ea-1}}{}
+%authors
+}%affiliations
+
+
+\end{aug}
+
+\begin{abstract}
+
+\end{abstract}
+
+% MSC class
+
+% keywords
+
+\end{frontmatter}
+
+\hypertarget{subtuxedtulo}{%
+\section{Subtítulo}\label{subtuxedtulo}}
+
+Texto.
+
+\hypertarget{subsubtuxedtulo}{%
+\subsection{Subsubtítulo}\label{subsubtuxedtulo}}
+
+Texto.
+
+
+
+\bibliographystyle{ba}
+\bibliography{references.bib}
+
+
+\end{document}
